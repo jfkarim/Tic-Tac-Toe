@@ -1,0 +1,42 @@
+.game {
+	margin: 10px auto;
+	width: 306px;
+}
+
+.cell {
+  float: left;
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  font-size: 6em;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+}
+
+.row {
+  clear: both;
+  float: left;
+}
+
+.X {
+  color: red;
+}
+
+.O {
+  color: blue;
+}
+
+#status {
+  font-size: 2em;
+  clear: both;
+}
+
+button {
+  font-size: inherit;
+  cursor: pointer;
+  background: #ffffee;
+  padding: 2px;
+  margin: 5px auto;
+  border-radius: 5px;
+}
