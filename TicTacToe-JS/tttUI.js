@@ -3,6 +3,8 @@ var game = new TTT.Game();
 $(document).ready( function() {
 
   console.log("Hi, Tic Tac Toers");
+  var xWins = 0;
+  var oWins = 0;
 
   var $cells = $('div.cell');
   var $status = $('#status > span');
@@ -27,8 +29,17 @@ $(document).ready( function() {
       if (game.winner()) {
         console.log("Player " + player + " wins");
         $status.html("Player " + player + " WINS!");
+		if (game.winner() === "X"){
+			xWins += 1;
+			$("#x-wins").html(xWins.toString());
+		} else {
+			oWins += 1;
+			$("#o-wins").html(oWins.toString());
+		}
+		console.log("WINNER: " + game.winner());
         $cells.unbind('click');
       }
+	  game.switchPlayer();
     } else {
       console.log("invalid move");
     }

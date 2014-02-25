@@ -4,6 +4,7 @@
 
   var TTT = root.TTT = (root.TTT || {});
 
+
   var Game = TTT.Game = function TTT() {
     this.player = Game.marks[0];
     this.board = this.makeBoard();
@@ -75,13 +76,13 @@
     if (!this.isEmptyPos(pos)) {
       return false;
     }
-
+		console.log("Player that just moved: " + this.player);
     this.placeMark(pos);
-    this.switchPlayer();
     return true;
   };
 
   Game.prototype.placeMark = function (pos) {
+		console.log("Mark to be placed: " + this.player);
     this.board[pos[0]][pos[1]] = this.player;
   };
 
@@ -111,12 +112,15 @@
 
       var won = _(indices).any(function (j) {
         return _(indices).every(function (i) {
+					// console.log("[" + i + ", " + j + "] is: " + game.board[i][j]); WRONG MARK BEING PLACED
           return game.board[i][j] === mark;
         });
       });
 
       if (won) {
+				// console.log("MARK in test: " + mark);
         winner = mark;
+				// console.log("Winner: " + winner)
       }
     });
 
@@ -124,6 +128,7 @@
   };
 
   Game.prototype.winner = function () {
+		console.log("game.winner test: " + (this.diagonalWinner() || this.horizontalWinner() || this.verticalWinner()));
     return (
       this.diagonalWinner() || this.horizontalWinner() || this.verticalWinner()
     );
@@ -145,7 +150,8 @@
     var game = this;
 
     game.turn(function(){
-      if (game.winner()) {
+			winner = game.winner();
+      if (winner) {
         console.log("Someone won!");
       } else {
         game.printBoard();
