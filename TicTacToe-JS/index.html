@@ -6,15 +6,17 @@
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script src="./tttUI.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   <title>Tic Tac Toe</title>
 </head>
 <body>
 	<div class="header group">
 		<h1>Tic-Tac-Toe</h1>
 	</div>
-	<div id="scoreboard">
-		<div class="wins group">X: <span id="x-wins"></span> </div>
-		<div class="wins group">O: <span id="o-wins"></span></div>
+	<h2 id="scoreboard-title">Scoreboard</h2>
+	<div id="scoreboard" class="group">
+		<div class="wins x-win group">X <p id="x-wins">0</p> </div>
+		<div class="wins o-win group">O <p id="o-wins">0</p></div>
 	</div>
 	<div class="game">
 	  <div class="row group">
@@ -34,7 +36,7 @@
 	  </div>
 	  <div id="status">
 	    <button>New Game</button>
-	    <span></span>
+	    <p></p>
 	  </div>
 	</div>
 </body>

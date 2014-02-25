@@ -1,6 +1,39 @@
+.header > h1 {
+	text-align: center;
+	font-family: "Lato";
+}
+
+#scoreboard-title {
+	width: 500px;
+	margin: 10px auto;
+	text-align: center;
+	font-family: "Lato";
+}
+
+#scoreboard {
+	width: 100px;
+	margin: 10px auto;
+	font-family: "Lato";
+	font-size: 20px;
+}
+
+.wins {
+	width: 50px;
+	text-align: center;
+}
+
+.x-win {
+	float: left;
+}
+
+.o-win {
+	float: right;
+}
+
 .game {
 	margin: 10px auto;
 	width: 306px;
+	font-family: "Lato";
 }
 
 .cell {
@@ -30,12 +63,14 @@
 #status {
   font-size: 2em;
   clear: both;
+	text-align: center;
 }
 
 button {
   font-size: inherit;
+	color: #eee;
   cursor: pointer;
-  background: #ffffee;
+  background: black;
   padding: 2px;
   margin: 5px auto;
   border-radius: 5px;

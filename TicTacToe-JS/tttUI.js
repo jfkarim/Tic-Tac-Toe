@@ -7,7 +7,7 @@ $(document).ready( function() {
   var oWins = 0;
 
   var $cells = $('div.cell');
-  var $status = $('#status > span');
+  var $status = $('#status > p');
 
   // Called by the "New Game button"
   var clearBoard = function() {
